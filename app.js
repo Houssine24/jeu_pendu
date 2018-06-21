@@ -3,9 +3,6 @@ var arr = [""];
 var cc = 0;
 var faux = 0;
 var motJ1 = ["espagne","france", "bresil", "belgique", "argentine", "maroc", "nigeria", "perou"];
-// var result = "";
-// var bb = "_";
-// var motJ2= [];
 var vie = 8;
 var ok = false;
 var motstab=[];
@@ -20,15 +17,6 @@ $("#image5").hide();
 $("#image6").hide();
 $("#image7").hide();
 $("#image8").hide();
-// var rd = random();
-// function random()
-// {
-// 	for (var i = 0; i<mots.length; i++)
-// 	{
-// 		motJ2.push('_');
-// 		$("#div2").html(motJ2);
-// 	}
-// }
 
 motstab = mots.split('');
 
@@ -62,11 +50,6 @@ $("#jouer").click(function ()
 					}
                     faux = 0;
                     $("#div1").html("Ton équipe a trouver : " + arr);
-	
-        // var lengthOrdi = mots.length;
-        // // console.log("length ordi = " + lengthOrdi);
-        // var lengthCorrecte = arr.length;
-        // // console.log("length correcte" + lengthCorrecte);
 
 		motstab1 = motstab.toString();
 		arr1 = arr.toString();
@@ -116,5 +99,4 @@ $("#jouer").click(function ()
 $("#reset").click(function() 
 {
 	location.reload();
-})	 
- 
+})	  
