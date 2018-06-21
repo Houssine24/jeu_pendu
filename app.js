@@ -2,7 +2,7 @@ alert("Devine une équipe : COUPE DU MONDE !")
 var arr = [""];
 var cc = 0;
 var faux = 0;
-var motJ1 = ["espagne","france", "bresil", "belgique", , "argentine", "maroc", "nigeria", "perou",];
+var motJ1 = ["espagne","france", "bresil", "belgique", "argentine", "maroc", "nigeria", "perou"];
 // var result = "";
 // var bb = "_";
 // var motJ2= [];
@@ -58,10 +58,10 @@ $("#jouer").click(function ()
 					if (faux < 0) 
 					{
 						vie--;
-						alert("raté, tu a perdu une vie !! " + vie);
+						alert("raté, il te reste !! " + vie);
 					}
                     faux = 0;
-                    $("#div1").html("Ton mot a trouver : " + arr);
+                    $("#div1").html("Ton équipe a trouver : " + arr);
 	
         // var lengthOrdi = mots.length;
         // // console.log("length ordi = " + lengthOrdi);
@@ -78,7 +78,7 @@ $("#jouer").click(function ()
         			}  
         			if (vie < 1)
         			{
-            			alert("PERDU !");
+            			alert("PERDU !!");
             			$("#image7").hide();
         				$("#image8").show();
         			}
