@@ -6,6 +6,7 @@ var motJ1 = ["espagne","france", "bresil", "belgique", , "argentine", "maroc", "
 // var result = "";
 // var bb = "_";
 var motJ2= [];
+var vie = 10;
 var ok = false;
 mots = motJ1[Math.floor(Math.random() * motJ1.length)];
 
@@ -44,21 +45,26 @@ $("#jouer").click(function ()
                     }
 					if (faux < 0) 
 					{
-						alert("raté");
-						console.log(faux);
+						vie--;
+						alert("raté, tu a perdu une vie !!");
 					}
                     faux = 0;
                     $("#div1").html("Ton mot a trouver : " + arr);
 	
-                    // bb = arr
-                    // console.log(bb);
-                    // result = motJ1;                   
-                    // //console.log(result);
+        var lengthOrdi = mots.length;
+        // console.log("length ordi = " + lengthOrdi);
+        var lengthCorrecte = arr.length;
+        // console.log("length correcte" + lengthCorrecte);
 
-                    // if (bb[i] == result)
-                    // {                 
-                    // 	alert("bravo");       
-                    // }
+        			if (lengthOrdi == lengthCorrecte)
+        			{
+            			alert("GAGNER !");
+        			}  
+        			if (vie < 1)
+        			{
+            			alert("PERDU !");
+        			}
+
 });
        
 $("#reset").click(function() 
