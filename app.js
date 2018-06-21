@@ -1,59 +1,68 @@
-/*var motJ1 = [""];
-motJ1 = prompt ("Saissiez le mot a deviner");
-var saisie = prompt("Deviner le mot");
-
-for( var i = 0; i<motJ1.length; i++ ){
-	if( saisie == motJ1[i] ){
-		alert(motJ1[i] + " = " + saisie);
-	}
-	else
-	{
-	continue;
-	alert("raté");	
-	}
-}
-	//autre solut
-var i = 0;
-var mots = ["bonjour", "manger", "coucou"];
-var tableauReponses=[];
-var mot = mots[Math.floor(Math.random() * mots.length)];
-
- tableauReponses.length = mots.length;
- while(i<mot.length){
- 	i++;
- 	tableauReponses[i] = " _ ";
- 	div1.html(tableauReponses);
- }
-
-console.log(mot);
-*/
-
-$("#reset").click(function()
-{
-	saisie = prompt("Saisissez une lettre"); 
-})
-var saisie = prompt("Saisissez une lettre");
-var motJ1 = ["manger", "trouver", "salut", "machine"];
-mots = motJ1[Math.floor(Math.random() * motJ1.length)];
-console.log(mots);
+alert("Devine une équipe : COUPE DU MONDE !")
+var arr = [""];
+var cc = 0;
 var faux = 0;
+var motJ1 = ["espagne","france", "bresil", "belgique", , "argentine", "maroc", "nigeria", "perou",];
+// var result = "";
+// var bb = "_";
+var motJ2= [];
+var ok = false;
+mots = motJ1[Math.floor(Math.random() * motJ1.length)];
 
-for( var i = 0; i<mots.length; i++ ){
-	if( saisie == mots[i] ){
-		console.log(mots[i] + " = " + saisie);
-		faux = faux + 100;
-		alert("c'est cool");
-	}
-	else
+var rd = random();
+function random()
+{
+	for (var i = 0; i<mots.length; i++)
 	{
-		faux--;
-		console.log(mots);
+		motJ2.push('_');
+		$("#div2").html(motJ2);
 	}
 }
-	$("#div1").html(saisie);
-if (faux < 0) {
-	alert("raté");
-}
+
+$("#jouer").click(function ()
+{
+	console.log(mots);
+	saisie = prompt("Saisissez une lettre"); 
+	ok=false;
+				for( var i = 0; i<mots.length; i++ )
+				{
+					if( saisie == mots[i] )
+					{
+						cc=i;
+						console.log(mots[i] + " = " + saisie);
+						faux = faux + 100;
+						arr[cc]=saisie;
+						ok = true;
+					}
+					else
+					{
+						faux--;
+					}
+				}
+                    if(ok == true){
+						alert("c'est cool");
+                    }
+					if (faux < 0) 
+					{
+						alert("raté");
+						console.log(faux);
+					}
+                    faux = 0;
+                    $("#div1").html("Ton mot a trouver : " + arr);
 	
-	
-	 
+                    // bb = arr
+                    // console.log(bb);
+                    // result = motJ1;                   
+                    // //console.log(result);
+
+                    // if (bb[i] == result)
+                    // {                 
+                    // 	alert("bravo");       
+                    // }
+});
+       
+$("#reset").click(function() 
+{
+	location.reload();
+})	 
+ 
